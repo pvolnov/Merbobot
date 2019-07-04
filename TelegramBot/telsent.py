@@ -191,8 +191,11 @@ def repeat_all_messages(message):
 
     elif (message.text == "Get Card Cod"):
         b = Users.select().where(Users.tel_id == message.chat.id)[0]
-        f=make_barcode(b.efka_id)
-        f.save('qr')
+        try:
+            f=make_barcode(b.efka_id)
+            f.save('qr')
+        except:
+            pass
         qr=open('qr.png','rb')
         bot.send_photo(message.chat.id, qr)
     else:
