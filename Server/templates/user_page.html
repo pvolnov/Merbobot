@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merbo</title>
+
+    <link rel="shortcut icon" href="/res/logo.png" type="image/x-icon">
+    <!--<link rel="shortcut icon" href="img/logo.png" type="image/png">-->
+
+
+    <link rel="stylesheet" href="/css/jquery.mobile-1.0a2.min.css"/>
+    <link rel="stylesheet" href="/css/themes/mytheme.css"/>
+    <link rel="stylesheet" href="/css/themes/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    <script src="/js/jquery-1.4.4.min.js"></script>
+    <script src="/js/jquery.mobile-1.0a2.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+
+    <script src="/js/user.js"></script>
+
+</head>
+
+
+<div data-role="page" id="main_page" data-theme="c">
+    <div data-role="header">
+        <h1 class="lbl" id="twi_acc">Merbo bot</h1><br>
+        <div data-role="navbar" >
+            <ul>
+                <li><a href="#"  class="ui-btn-active">Рейтинг участников</a></li>
+                <li><a href="#lot" >Лотерея</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div data-role="content">
+
+        <table class="table">
+                <thead>
+                <tr>
+                    <th class="col-lg-6">Username</th>
+                    <th class="col-lg-6">Raiting</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for u in top %}
+                    <tr>
+                        <td>{{ u.name }}</td>
+                        <td>{{ u.balance }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+
+    <div data-role="footer">
+    </div>
+</div>
+
+<div data-role="page" id="lot" data-theme="c">
+    <div data-role="header">
+        <h1 class="lbl" id="twi_acc">Merbo bot</h1><br>
+        <div data-role="navbar" >
+            <ul>
+                <li><a href="#main_page" >Рейтинг участников</a></li>
+                <li><a href="#" class="ui-btn-active">Лотерея</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div data-role="content">
+        <label class="lbl" style="text-align: center">Учавствуй в еженедельной лотереии!</label><br>
+        <form  data-ajax="false"   id="reg_form"  onsubmit="pwd_handler(this);">
+
+            <div data-role="fieldcontain">
+                <input type="hidden" name="action" value="reg_lot">
+                <input type="hidden" name="lid" value="{{ id }}">
+
+                <label class="lbl">Имя:</label>
+                <input type="text" name="name" placeholder="Иван"><br>
+
+                <label class="lbl">фамилия:</label>
+                <input type="text" name="secondname" placeholder="Иванов"><br>
+
+
+                <label class="lbl">E-mail:</label>
+                  <input type="email" name="email"  placeholder="efka@gmail.com"><br>
+
+                <label class="lbl">Телефон:</label>
+                  <input type="number" name="phone"  placeholder="+79162323234"><br>
+
+            </div>
+            <input data-role="button" type="submit" value="Учавствовать"  id="reg_btn">
+        </form>
+
+    </div>
+    <div data-role="footer">
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

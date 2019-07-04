@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)/quizs -->
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/res/logo.png" type="image/x-icon">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Merbo</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.confirm.min.js"></script>
+    <script src="/js/bootstrap-modal.js "></script>
+    <script src="/js/datared.js "></script>
+
+
+</head>
+
+<body style="padding: 2%;">
+
+<div class="container">
+    <div class="row">
+
+        <div class="table-responsive">
+
+
+            <table class="table" >
+                <thead>
+                <tr>
+                    <th class="col-lg-8">Photo</th>
+                    <th class="col-lg-4">Status</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for f in photos %}
+                    <tr id="{{ f.name }}">
+
+                        <td>
+                            <picture>
+                                <source type="image/svg+xml">
+                                <img src="/res/photos/{{ f.name }}" width="300"
+                                     class="img-fluid img-thumbnail">
+                            </picture>
+                        </td>
+                        <td>
+                            <form action="/com" method="post" >
+                                <div class="row">
+                                <div class="col-md-8">
+                                <input type="hidden" name="name" id="t" value="{{ f.name }}">
+                                <input type="hidden" name="action" value="reddata">
+
+                                <input type="submit" class="form-control" name="stut" value="good"
+                                       style="background-color: #1b721a; color: white"><br>
+
+                                <input type="submit" class="form-control" name="stut" value="bad"
+                                       style="background-color: darkred; color: white"><br>
+
+                                <input type="submit" class="form-control" name="stut" value="spam"
+                                       style="background-color: darkgrey; color: white">
+
+                                </div></div>
+
+                            </form>
+
+                        </td>
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

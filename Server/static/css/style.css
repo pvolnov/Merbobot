@@ -1,0 +1,23 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
+.btn {
+
+}
+h1{
+    margin-bottom: 20px;
+    color: #1b721a;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+textarea.form-control{
+    height: 140px;
+}
+body{
+    /*display: grid;*/
+    /*grid-template-columns: 30% 30%;*/
+    /*grid-gap: 2rem;*/
+    /*text-align: center;*/
+    padding: 10%;
+    padding-top: 3%;
+}
+
