@@ -17,8 +17,6 @@ Bot for Telegram, made at the hackathon URRBAN TECH CHELLENGE. The algorithm is 
 
 After receiving the photos are checked for spam with the help of a neural network. Then from each photo using Hough's algorithm the shelves are selected, using gradient boosting methods the presence of extraneous goods on the shelves, gaps between items and unevenly standing products are searched. All photos can later be manually marked up in the web interface and replenish the dataset. At the time of writing, the accuracy of spam detection is 96%, detection of display quality is 73.432%. 
 
-Translated with www.DeepL.com/Translator (free version)
-
 The photo shows graphs of changes in the quality of display of goods in different stores:
 ![Site kachestvo](https://files.catbox.moe/d2y8bw.png)
 
